@@ -4,8 +4,8 @@
 #include <random>
 #include <iomanip>
 
-const int MATRIX_SIZE = 512;  // Large for cache misses
-const int FIB_DEPTH = 42;     // Deep recursion
+const int MATRIX_SIZE = 512;  
+const int FIB_DEPTH = 70;     
 const int ARRAY_SIZE = 10000000;
 
 void naive_matmul(const std::vector<std::vector<double>>& A,
@@ -36,13 +36,13 @@ long long sum_loop(const std::vector<int>& vec) {
 }
 
 int main() {
-    // Matrix multiplication
+    // Matrix Multiplication
     std::vector<std::vector<double>> A(MATRIX_SIZE, std::vector<double>(MATRIX_SIZE, 1.0));
     std::vector<std::vector<double>> B(MATRIX_SIZE, std::vector<double>(MATRIX_SIZE, 2.0));
     std::vector<std::vector<double>> C(MATRIX_SIZE, std::vector<double>(MATRIX_SIZE, 0.0));
     naive_matmul(A, B, C);
 
-    // Recursive Fibonacci (hotspot in recursion)
+    // Recursive Fibonacci 
     std::cout << "Fib(" << FIB_DEPTH << ") = " << fib(FIB_DEPTH) << "\n";
 
     // Large array sum (loop hotspot)
